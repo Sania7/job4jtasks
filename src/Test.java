@@ -1,19 +1,11 @@
 public class Test {
     public static void main(String[] args) {
-        int n = 3;
-        int[][] a = new int[n][n];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                a[i][j] = n * i + j;
-            }
+        int count = 4;
+        int n = 2;
+        int amount = 0;
+        for (int i = 0; i < count; i++) {
+            amount = count + n;
         }
-        System.out.println("Начальная матрица");
-        System.out.println("-------");
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.print(a[i][j] + "    ");
-            }
-            System.out.println();
-        }
+        System.out.print(amount);
     }
 }
