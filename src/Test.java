@@ -1,11 +1,8 @@
 public class Test {
     public static void main(String[] args) {
-        int count = 4;
-        int n = 2;
-        int amount = 0;
-        for (int i = 0; i < count; i++) {
-            amount = count + n;
-        }
-        System.out.print(amount);
+        String str = "делаем все буквы заглавными";
+        String strUpper = str.toUpperCase();
+        System.out.println("Оригинал строки: " + str);
+        System.out.println("Изменение строки в верхний регистр: " + strUpper);
     }
 }
