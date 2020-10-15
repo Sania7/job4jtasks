@@ -16,4 +16,10 @@ public class EditorElementsArray {
         }
         return  result;
     }
+
+    public static void main(String[] args) {
+        int[][] rsl = new int[5][7];
+        int el = 3;
+        System.out.println(changeData(rsl, el));
+    }
 }
