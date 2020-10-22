@@ -1,30 +1,48 @@
-import java.util.Arrays;
+/**
+ * Отсортированный двумерный массив.
+ */
 
 public class Test {
-    public static int calculate(int[] hours) {
-        int pay = 0;
-        int overpay = 0;
-        int pay1 = 0;
-        int overpay1 = 0;
-        for (int i = 0; i < hours.length; i++) {
-            if (i < 5) {
-                if (hours[i] <= 8) {
-                    pay = hours[i] * 10 + pay;
-                } else {
-                    overpay = 80 + ((hours[i] - 8) * 15) + overpay;
-                }
+    public static void main(String[] args) {
+        int [][] array = {{4, 8, 7, 6, 6},
+                          {3, 2, 6, 3, 2},
+                          {12, 9, 1,7, 9},
+                          {2, 4, 6, 4, 2}};
+
+        int n = 4;
+        int m = 5;
+        for (int i = 0; i < n; i++){
+            for (int j = 0; j < m; j++){
+                System.out.printf("%3d", array[i][j]);
             }
-            if (i >= 5) {
-                if (hours[i] <= 8) {
-                    pay1 = hours[i] * 20;
-                } else {
-                    overpay1 = 160 + ((hours[i] - 8) * 30) + overpay1;
+            System.out.println();
+        }
+        int obmen = 0;
+        for (int l=0; l<n; ++l){
+            for (int k =0 ; k<m; ++k){
+                for (int i = 0; i<n; ++i){
+                    for (int j = 0; j<m; ++j){
+
+                        if(array[l][k] < array[i][j]){
+                            int t = array[i][j];
+                            array[i][j] = array[l][k];
+                            array[l][k] = t;
+                            obmen++;
+                        }
+                    }
                 }
             }
         }
-        return pay + overpay + pay1 + overpay1;
 
-
+        System.out.println();
+        System.out.println();
+        for (int i = 0; i < n; i++){
+            for (int j = 0; j < m; j++){
+                System.out.printf("%3d", array[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
 }
 
