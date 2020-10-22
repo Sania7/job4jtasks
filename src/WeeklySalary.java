@@ -1,17 +1,38 @@
 public class WeeklySalary {
+    /**
+     * @param hours
+     * @return
+     * 10. Еженедельная зарплата
+     * Метод принимает массив целочисленных значений, при этом каждый элемент массива означает количество часов,
+     * которые работник отработал в каждый день недели. Работник может работать и в выходные.
+     * При этом оплачивается труд следующим образом
+     * 1. В течение первых 8 часов каждый рабочий день за каждый час зарплата составляет 10 долларов.
+     * 2. За каждый отработанный час сверх нормы (8 часов) работник зарабатывает 15 долларов.
+     * 3. В выходные дни работодатель платит в два раза больше, как за каждый час по норме(первые 8 часов),
+     * так и сверхурочные.
+     * Необходимо реализовать метод, который посчитает общую сумму заработка за отработанную неделю.
+     */
     public static int calculate(int[] hours) {
-        int salary = 0;
-        int rate = 10;
-        int overNorm = 15;
-//        int workOnTheDayOff = 20;
-//        int aboveTheNormOnTheDayOff = 30;
-        int[] week = {1, 2, 3, 4, 5, 6, 7};
-        for (int i = 0; i < week.length; i++) {
-            if (week[i] != 6 || week[i] != 7) {
-//                salary = rate * hours;
+        int pay = 0;
+        int overpay = 0;
+        int pay1 = 0;
+        int overpay1 = 0;
+        for (int i = 0; i < hours.length; i++) {
+            if (i < 5) {
+                if (hours[i] <= 8) {
+                    pay = hours[i] * 10 + pay;
+                } else {
+                    overpay = 80 + ((hours[i] - 8) * 15) + overpay;
+                }
+            }
+            if (i >= 5) {
+                if (hours[i] <= 8) {
+                    pay1 = hours[i] * 20;
+                } else {
+                    overpay1 = 160 + ((hours[i] - 8) * 30) + overpay1;
+                }
             }
         }
-
-        return salary;
+        return pay + overpay + pay1 + overpay1;
     }
 }
