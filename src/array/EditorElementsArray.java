@@ -1,6 +1,7 @@
 package array;
 
 /**
+ * 34. Изменить элементы двумерного массива.
  * Метод принимает двумерный массив произвольного размера, в котором может быть сколько угодно рядов,
  * а также произвольное число элементов в ряду. Необходимо перебрать массив и сравнить каждый элемент со значением
  * el которое мы передаем в параметрах метода. При этом:
@@ -13,18 +14,19 @@ package array;
 
 public class EditorElementsArray {
     public static int[][] changeData(int[][] array, int el) {
-        int[][] result = array;
-        for (int i = 0; i < result.length; i++) {
-            for (int j = 0; j < result[i].length; j++) {
-                if (result[i][j] > el) {
-                    int diff = result[i][j] - el;
-                    result[i][j] = diff;
-                }
-                if (result[i][j] <= el) {
-                    result[i][j] = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if (array[i][j] > el) {
+                    int diff = array[i][j] - el;
+                    array[i][j] = diff;
+                } else {
+                    var b = el <= array[i][j];
+                    array[i][j] = 0;
                 }
             }
         }
-        return  result;
+        return array;
     }
 }
+

@@ -1,25 +1,30 @@
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class Test {
-    public static void main(String[] args) {
-        int[] arr = {1, 1, 2, 3, 4, 5, 1};
-        int q = 1;
-        int e = -1;
-        int max = -1;
-        int pos = -1;
-        for (int i = 0; i < arr.length - 1; i++) {
-            if (arr[i] == arr[i + 1]) {
-                q++;
-                if (max < q) {
-                    max = q;
-                    pos = i;
-                    e = arr[i];
+    public static int calculate(int[] hours) {
+        int pay = 0;
+        int overpay = 0;
+        int pay1 = 0;
+        int overpay1 = 0;
+        for (int i = 0; i < hours.length; i++) {
+            if (i < 5) {
+                if (hours[i] <= 8) {
+                    pay = hours[i] * 10 + pay;
+                } else {
+                    overpay = 80 + ((hours[i] - 8) * 15) + overpay;
                 }
-            } else {
-                q = 1;
+            }
+            if (i >= 5) {
+                if (hours[i] <= 8) {
+                    pay1 = hours[i] * 20;
+                } else {
+                    overpay1 = 160 + ((hours[i] - 8) * 30) + overpay1;
+                }
             }
         }
-        System.out.println("элемент " + e + " повторяется " + max + " раз, начиная с позиции " + pos);
+        return pay + overpay + pay1 + overpay1;
+
+
     }
 }
 

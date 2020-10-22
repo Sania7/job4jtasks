@@ -8,7 +8,9 @@ public class EditorElementsArrayTest {
 
     @Test
     public void changeData() {
-        int[][] array = {{1, 8, 3}, {2, 4, 11}, {-10, 6, 5}};
+        int[][] array = {{1, 8, 3},
+                         {2, 4, 11},
+                        {-10, 6, 5}};
         int el = 3;
         int[][] rsl = EditorElementsArray.changeData(array, el);
         int[][] expected = {{0, 5, 0}, {0, 1, 8}, {0, 3, 2}};
