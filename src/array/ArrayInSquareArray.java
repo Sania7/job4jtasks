@@ -10,6 +10,15 @@ package array;
  */
 public class ArrayInSquareArray {
     public static int[][] convertArray(int[] array) {
-        return null;
+        int count = 0;
+        int rows = 0;
+        int column = 0;
+        int[][] matrix = new int[rows][column];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                matrix[i][j] = array[count++];
+            }
+        }
+        return matrix;
     }
 }
