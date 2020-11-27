@@ -20,6 +20,6 @@ public class AddElement {
     public static boolean addNewElement(List<String> list, String str) {
         List<String> check = new ArrayList<>(list);
         list.add(str); // добавляем элемент в список
-        return (list.size() - check.size() != 0); // сравниваем списки и возвращаем если элемент добавился
+        return (list.size() != check.size()); // сравниваем списки и возвращаем если элемент добавился
     }
 }
