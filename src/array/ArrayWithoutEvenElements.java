@@ -9,6 +9,7 @@ package array;
 В этой задаче будет необходимо использовать оператор continue.
  */
 
+
 public class ArrayWithoutEvenElements {
     public static int[] changeData(int[] data) {
         int[] out = new int[data.length / 2];
