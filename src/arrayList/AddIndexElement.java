@@ -14,9 +14,9 @@ import java.util.List;
 public class AddIndexElement {
     public static boolean addNewElement(List<String> list, int index, String str) {
         List<String> check = new ArrayList<>(list);
-        if (!list.contains(str)) {
-            list.add(index, str);
+        if (!list.contains(str)) { // проверяем есть ли элемент в списке
+            list.add(index, str); // добавляем элемент по индексу
         }
-        return list.size() != check.size();
+        return list.size() != check.size(); // сравниваем размер списка и списка в который мы добавили элемент
     }
 }
