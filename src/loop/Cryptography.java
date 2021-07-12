@@ -1,5 +1,7 @@
 package loop;
 
+import java.util.Scanner;
+
 /**
  * 11. Шифр строки.
  * Необходимо реализовать метод, который принимает строку,
@@ -12,16 +14,24 @@ package loop;
  */
 
 public class Cryptography {
+    static Scanner scanner = new Scanner(System.in);
     public static String code(String s) {
-        if (s.equals("")) {
-            s = "empty";
-        } else if (s.length() > 4) {
-            StringBuilder str = new StringBuilder(s);
-            for (int i = s.length() - 5; i >= 0 ; i--) {
-                str.setCharAt(i, '#');
+        System.out.println("Введите строку: ");
+        String str = scanner.nextLine();
+            if (str.equals("")) { // проверяем пустая ли строка
+                str = "empty"; // если строка пустая то присваиваем empty
+            } else if (str.length() > 4) { // проверяем если строка более 4 символов
+                StringBuilder string = new StringBuilder(str);
+                for (int i = str.length() - 5; i >= 0; i--) {
+                    string.setCharAt(i, '#');
+                }
+                str = string.toString();
             }
-            s = str.toString();
+            return str;
         }
-        return s;
+        public static void main (String[]args){
+            String crypt = Cryptography.code(" ");
+            System.out.println(crypt);
+        }
     }
-}
+

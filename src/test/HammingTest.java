@@ -1,5 +1,6 @@
-package loop;
+package test;
 
+import loop.Hamming;
 import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
