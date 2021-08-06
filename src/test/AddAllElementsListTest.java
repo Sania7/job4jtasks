@@ -1,5 +1,6 @@
-package arrayList;
+package test;
 
+import arrayList.AddAllElementsList;
 import org.junit.Test;
 
 import java.util.ArrayList;

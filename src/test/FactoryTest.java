@@ -1,5 +1,6 @@
-package arrayList;
+package test;
 
+import arrayList.Factory;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
