@@ -47,8 +47,6 @@ public class KeySet {
         System.out.println(Arrays.asList(map));
         System.out.println(Collections.singletonList(map));
 
-        System.out.println(Arrays.toString(map.entrySet().toArray()));
-
         map.forEach((key, value) -> System.out.println(key + " - " + value));
     }
 }
