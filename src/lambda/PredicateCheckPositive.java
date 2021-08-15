@@ -16,8 +16,4 @@ public class PredicateCheckPositive {
     private static boolean check(Predicate<Integer> predicate, int num) {
         return predicate.test(num);
     }
-
-    public static void main(String[] args) {
-
-    }
 }
