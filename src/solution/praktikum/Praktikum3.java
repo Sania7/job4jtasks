@@ -1,4 +1,4 @@
-package solution;
+package solution.praktikum;
 
 public class Praktikum3 {
     public static void main(String[] args) {
