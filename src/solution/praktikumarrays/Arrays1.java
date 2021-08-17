@@ -18,19 +18,19 @@ public class Arrays1 {
         };
 
         // Поменяйте местами покупку дивана и поездку в Китай в три шага, используя swap
-        String swap = plans[4]; // Присвойте swap значение элемента, который вы заменяете
-        plans[4] = plans[0]; // Присвойте значение одного элемента другому
+        String swap = plans[0]; // Присвойте swap значение элемента, который вы заменяете
+        plans[0] = plans[4]; // Присвойте значение одного элемента другому
         plans[4] = swap; // В swap должно оказаться значение элемента, выбранного на замену
 
         // Замените фразу "Поехать в Японию в отпуск" на "Поехать в Сочи в отпуск"
-        String swap1 = plans[8];
+
         plans[8] = "Поехать в Сочи в отпуск";
-        swap1 = plans[8];
+
 
         System.out.println("Изменения в планах:");
-        System.out.println("1. " + swap);
-        System.out.println("2. " + swap1);
-        System.out.println();
+        System.out.println("1. " + plans[0]);
+        System.out.println("5. " + plans[4]);
+        System.out.println("9. " + plans[8]);
 
     }
 }
